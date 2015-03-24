@@ -68,7 +68,7 @@ public class VigenereCipher {
          */
         char[] cipher_text = new char[ plain_text.length() ];
 
-        /* Plain character XOR Key character (using tabula recta) */
+        /* Plain character + Key character MOD tabula_recta_size_side (using tabula recta) */
         for ( int i = 0, j = 0; i < plain_text.length(); i ++, j = (j + 1) % key.length() )
         {
             if ( ((int)plain_text.charAt(i) >= start_ascii_code) && ((int)plain_text.charAt(i) <= end_ascii_code) )
